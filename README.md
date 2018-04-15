@@ -15,8 +15,8 @@ In the document requeriments.txt we have all the required packages to execute th
 The recommended approach is using virtualenv.
 * **Deploy Docker**
 * **Deploy Heroku**
-## Build With
-TODO
+## UML diagram
+![alt text](https://raw.githubusercontent.com/markankaro/gamecatalog_web_practice/dev/media/game_catalogueUML.png)
 ## Authors
 * **Eduard Bellet Bellet** - [WingsOfClash](https://github.com/wingsofclash)
 * **Genís Borràs Vallverdú** - [Genronbv](https://github.com/genronbv)

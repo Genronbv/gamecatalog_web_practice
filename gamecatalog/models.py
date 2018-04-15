@@ -7,17 +7,24 @@ from django.db import models
 
 from django.db import models
 from django.contrib.auth.models import User
-from datatime import datetime
 
-class Games(models.Model):
+class Game(models.Model):
     name = models.TextField()
     company =  models.ForeignKey(Company, related_name='developed_by')
 
 class Company(models.Model):
     name = models.TextField()
 
-class Plataform(models.Model):
+class Platform(models.Model):
     name = models.TextField()
 
 class Genre(models.Model):
     name = models.TextField()
+
+class GameRelease(models.Model):
+    game = models.ForeignKey(Game)
+    date = models.DateField()
+    platform = models.ForeignKey(Platform)
+
+    class Meta:
+        unique_together = ("game", "platform")

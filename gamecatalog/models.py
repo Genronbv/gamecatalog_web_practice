@@ -13,6 +13,9 @@ class Serie(models.Model):
     name = models.TextField()
     description = models.TextField(blank=True, null=True)
 
+    def __unicode__(self):
+        return self.name
+
 
 class Company(models.Model):
     name = models.TextField()
@@ -21,10 +24,16 @@ class Company(models.Model):
     city = models.TextField(blank=True, null=True)
     web = models.TextField(blank=True, null=True)
 
+    def __unicode__(self):
+        return self.name
+
 
 class Genre(models.Model):
     name = models.TextField()
     description = models.TextField(blank=True, null=True)
+
+    def __unicode__(self):
+        return self.name
 
 
 class Game(models.Model):
@@ -34,11 +43,17 @@ class Game(models.Model):
     description = models.TextField(blank=True, null=True)
     series = models.ForeignKey(Serie, blank=True, null=True)
 
+    def __unicode__(self):
+        return self.name
+
 
 class Platform(models.Model):
     name = models.TextField()
     description = models.TextField(blank=True, null=True)
     date = models.DateField(default=date.today)
+
+    def __unicode__(self):
+        return self.name
 
 
 class GameRelease(models.Model):
@@ -48,8 +63,13 @@ class GameRelease(models.Model):
     date = models.DateField(default=date.today)
     description = models.TextField(blank=True, null=True)
 
+    def __unicode__(self):
+        return self.name
+
     class Meta:
         unique_together = ("game", "platform")
+
+
 
 
 class GameReview(models.Model):
@@ -61,6 +81,9 @@ class GameReview(models.Model):
     rating = models.PositiveSmallIntegerField('Rating (0-10)', blank=False, default=3, choices=RATING_CHOICES)
     review = models.TextField(blank=True, null=True)
     date = models.DateField(default=date.today)
+
+    def __unicode__(self):
+        return self.name
 
     class Meta:
         unique_together = ("game", "user")

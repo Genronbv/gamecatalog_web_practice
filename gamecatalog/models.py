@@ -9,7 +9,7 @@ from django.db import models
 
 # Create your models here.
 
-class Series(models.Model):
+class Serie(models.Model):
     name = models.TextField()
     description = models.TextField(blank=True, null=True)
 

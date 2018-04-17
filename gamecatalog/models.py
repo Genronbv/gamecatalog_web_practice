@@ -32,7 +32,7 @@ class Game(models.Model):
     company = models.ForeignKey(Company, related_name='developed_by')
     genre = models.ForeignKey(Genre, related_name='of_the_genre')
     description = models.TextField(blank=True, null=True)
-    series = models.ForeignKey(Series, blank=True, null=True)
+    series = models.ForeignKey(Serie, blank=True, null=True)
 
 
 class Platform(models.Model):

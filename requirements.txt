@@ -8,6 +8,7 @@ elementtree===1.2.7-20070827-preview
 futures==3.1.1
 gevent==1.2.2
 greenlet==0.4.10
+gunicorn==19.7.1
 html5lib==0.90
 jmespath==0.9.3
 lxml==3.5.0

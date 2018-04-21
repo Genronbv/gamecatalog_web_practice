@@ -1,0 +1,1 @@
+web: gunicorn gamecatalog_web_practice.wsgi --log-file -
